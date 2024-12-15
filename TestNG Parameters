@@ -1,0 +1,45 @@
+/*TestNG Parameters
+TestNG Parameters are the arguments that we pass to the test methods. There are two ways through which we can pass the parameters to the test methods.
+• TestNG Parameters (with XML file)
+• TestNG DataProviders
+Syntax
+@Parameter({"parameter name"})
+@Parameters({"param1","param2","param3"})*/
+
+/*   <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="i" value="5"></parameter>
+<parameter name="j" value="4"></parameter>
+  <test thread-count="5" name="Test">
+  <classes>
+  <class name="TESTNG.TESTNG.TestNG_Parameters_Demo"></class>
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->               */
+
+
+package TESTNG.TESTNG;
+import org.testng.annotations.*; // it's used for declaring the test case the thing which is in the public void class
+
+public class TestNG_Parameters_Demo {
+	@Test
+	@Parameters({"i", "j"}) // here i & j is a & b we can take any name for this 
+	public void addition(int a, int b) {
+		System.out.println("The Ans of Addition is :- " + (a+b));
+	}
+
+	
+	@Test
+	@Parameters({"i", "j"})
+	public void subtraction(int a, int b) {
+		System.out.println("The Ans of Subtraction is :- " + ( a-b));
+	}
+
+	@Test
+	@Parameters({"i", "j"})
+	public void multiplication(int a, int b) {
+		System.out.println("The Ans of Multiplication is :- "+ (a*b));
+	}
+
+}
