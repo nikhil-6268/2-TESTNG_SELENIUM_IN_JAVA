@@ -26,7 +26,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations. *;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class testngdemo {
+public class Testngdemo {
 	
 	@Test
 	
