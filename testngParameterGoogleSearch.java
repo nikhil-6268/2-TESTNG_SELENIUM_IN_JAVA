@@ -35,7 +35,7 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class testngParameterGoogleSearch {
+public class TestngParameterGoogleSearch {
 	
 	@SuppressWarnings("deprecation")
 	@Parameters({"keyword"})
