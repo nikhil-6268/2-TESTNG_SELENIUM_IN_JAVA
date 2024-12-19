@@ -25,9 +25,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.SkipException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+@Listeners(TESTNG.TESTNG.ListenersClass.class)
 public class ListenersDemo {
 
     @Test
@@ -60,7 +63,19 @@ public class ListenersDemo {
 
         } finally {
             // Close the browser
-            //driver.quit();
+           // driver.quit();
         }
+    }
+
+    @Test
+    public void testFail() {
+        System.out.println("Failed test case.");
+        Assert.assertTrue(false);
+    }
+
+    @Test
+    public void testSkipped() {
+        System.out.println("Skipped test case.");
+        throw new SkipException("Skip exception thrown...");
     }
 }
